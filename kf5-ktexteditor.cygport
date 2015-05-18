@@ -1,0 +1,38 @@
+inherit kf5
+
+NAME="kf5-ktexteditor"
+VERSION=5.10.0
+RELEASE=1
+CATEGORY="Libs"
+SUMMARY="KDE 5 text editor component library"
+DESCRIPTION="KTextEditor provides a powerful text editor component that you can
+embed in your application, either as a KPart or using the library if you need
+more control."
+
+PKG_NAMES="libKF5TextEditor5 libKF5TextEditor-devel"
+libKF5TextEditor5_CONTENTS="
+	etc/
+	usr/bin/cygKF5TextEditor-5.dll
+	${QT5_PLUGINSDIR#/}/kf5/parts/katepart.dll
+	usr/share/doc/
+	usr/share/katepart5/
+	usr/share/kservices5/
+	usr/share/kservicetypes5/
+	usr/share/kxmlgui5/katepart/
+	usr/share/locale/
+"
+libKF5TextEditor_devel_REQUIRES="libKF5Archive-devel libKF5GuiAddons-devel libKF5I18n-devel libKF5IconThemes-devel libKF5ItemViews-devel libKF5KIO-devel libKF5Parts-devel libKF5Sonnet-devel libQt5Core-devel libQt5Gui-devel libQt5Script-devel"
+libKF5TextEditor_devel_CONTENTS="
+	usr/include/KF5/KTextEditor/
+	usr/include/KF5/ktexteditor_version.h
+	usr/lib/cmake/KF5TextEditor/
+	${QT5_MKSPECSDIR#/}/modules/qt_KTextEditor.pri
+	usr/lib/libKF5TextEditor.dll.a
+"
+
+src_install() {
+	cd ${B}
+	cyginstall
+
+	make_etc_defaults /etc/xdg
+}
