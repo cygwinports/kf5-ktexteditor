@@ -2,7 +2,7 @@ inherit kf5
 
 NAME="kf5-ktexteditor"
 VERSION=5.12.0
-RELEASE=1
+RELEASE=2
 CATEGORY="Libs"
 SUMMARY="KDE 5 text editor component library"
 DESCRIPTION="KTextEditor provides a powerful text editor component that you can
