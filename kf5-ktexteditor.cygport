@@ -1,8 +1,8 @@
 inherit kf5
 
 NAME="kf5-ktexteditor"
-VERSION=5.35.0
-RELEASE=2
+VERSION=5.39.0
+RELEASE=1
 CATEGORY="Libs"
 SUMMARY="KDE 5 text editor component library"
 DESCRIPTION="KTextEditor provides a powerful text editor component that you can
@@ -26,4 +26,10 @@ libKF5TextEditor_devel_CONTENTS="
 	usr/lib/cmake/KF5TextEditor/
 	${QT5_MKSPECSDIR#/}/modules/qt_KTextEditor.pri
 	usr/lib/libKF5TextEditor.dll.a
+	usr/share/kdevappwizard/templates/ktexteditor-plugin.tar.bz2
+"
+PKG_IGNORE="
+	etc/dbus-1/system.d/org.kde.ktexteditor.katetextbuffer.conf
+	usr/libexec/kauth/kauth_ktexteditor_helper.exe
+	usr/share/dbus-1/system-services/org.kde.ktexteditor.katetextbuffer.service
 "
